@@ -4,9 +4,8 @@
       { "src": "src/app.js", "use": "@vercel/node" }
     ],
     "routes": [
-      { "src": "/public/(.*)", "dest": "/public/$1" },
       { "handle": "filesystem" },
-      { "src": "/(.*)", "dest": "/src/app.js" }
+      { "src": "/(.*)", "dest": "src/app.js" }
     ]
   }
   

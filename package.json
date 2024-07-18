@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node src/app.js",
     "devStart": "nodemon src/app.js",
+    "postinstall": "npm install --platform=linux --arch=x64 sharp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -25,4 +26,3 @@
     "sharp": "^0.32.0"
   }
 }
-
