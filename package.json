@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/app.js",
     "devStart": "nodemon src/app.js",
-    "postinstall": "npm install --platform=linux --arch=x64 sharp",
+    "postinstall": "npm rebuild sharp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -24,5 +24,8 @@
     "image-size": "^1.0.2",
     "multer": "^1.4.5-lts.1",
     "sharp": "^0.32.0"
+  },
+  "devDependencies": {
+    "node-gyp": "^9.0.0"
   }
 }
