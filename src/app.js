@@ -7,6 +7,7 @@ const fs = require('fs');
 const app = express();
 const viewPath = path.join(__dirname, "../views");
 
+app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
@@ -47,6 +48,13 @@ app.post('/upload', upload.single('image'), async (req, res) => {
 app.get('/download', (req, res) => {
 	const convertedPath = 'public/' + req.query.path;
 	res.download(convertedPath);
+});
+app.get("/about", (req, res) => {
+    res.render("about", { name: "Dattatray Polade", address: "Pune,Maharashtra" });
+});
+
+app.get("/contact", (req, res) => {
+    res.render("contact", { email: "dattapolade@gmail.com" });
 });
 
 app.listen(3000, () => {
